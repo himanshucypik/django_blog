@@ -1,0 +1,10 @@
+<h2>All Comments</h2>
+<ul>
+    {% for comment in comments %}
+    <li>
+        <a href="{% url 'comment_detail' comment.pk %}">
+            {{ comment.author }} - {{ comment.text|truncatewords:10 }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
